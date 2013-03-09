@@ -140,7 +140,7 @@ body:before {
 /* line 56, ../sass/screen.scss */
 h1 {
   font-size: 4em;
-  margin: 0 auto -7px;
+  margin: 0 auto -4px;
   width: 960px;
   color: #fff;
   text-align: left;
