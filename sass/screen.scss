@@ -22,6 +22,8 @@ $open: 'Open Sans', sans-serif;
 .fr { float: right; }
 .fl { float: left; }
 .rel { position: relative;}
+#w80 { width: 80%; }
+#w20 { width: 19%; }
 
 * {
 	@include box-sizing(border-box);
@@ -73,6 +75,60 @@ a, .more, .title {
 	}
 }
 
+.wrap {
+	margin: 0 auto;
+	width: 960px;
+	border: 1px solid #ddd;
+	@include box-shadow(inset 0px 0px 2px 1px #fff, 0px 2px 7px #313131);
+	background: #f1f1f1;
+	display: block;
+}
+
+  // =================== //
+ // ===== LIST VIEW ====//
+// =================== //
+[data-page] {
+	@include transition(all .2s ease-in-out);
+	color: #cf0404;
+	display: inline-block;
+	height: 25px;
+	width: 25px;
+	border: 1px solid #ccc;
+	border-top-color: #d5d5d5;
+	border-bottom-color: #bbb;
+	border-right: none;
+	text-align: center;
+	line-height: 25px;
+	cursor: pointer;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(246,246,246,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+	@include box-shadow(inset 0px 1px 1px #fff, inset 0px -1px 1px #fff, inset 1px 0px 1px #fff, inset -1px 0px 1px #fff);
+
+	&:last-of-type {
+		border-right: 1px solid #ccc;
+	}
+	&:hover {
+		background: #eee;
+	}
+	&:active {
+		background: #e1e1e1;
+	}
+
+	&.selected { 
+		@include box-shadow(inset 0px 1px 1px rgba(255,255,255,.35),
+		 inset 0px -1px 1px rgba(255,255,255,.35),
+		  inset 1px 0px 1px rgba(255,255,255,.35),
+		   inset -1px 0px 1px rgba(255,255,255,.35));
+		background: #e1e1e1;
+	}
+}
+
 .title {
 	position: relative;
 	border-left: 4px solid #009CE5;
@@ -102,14 +158,7 @@ a, .more, .title {
 	}
 	&:hover::after {display: block; }
 }
-.wrap {
-	margin: 0 auto;
-	width: 960px;
-	border: 1px solid #ddd;
-	@include box-shadow(inset 0px 0px 2px 1px #fff, 0px 2px 7px #313131);
-	background: #f1f1f1;
-	display: block;
-}
+
 .issue-list {
 	position: relative;
 	margin-top: 50px;
@@ -164,8 +213,14 @@ a, .more, .title {
 	border-right: 1px solid #ccc;
 	min-height: 120px;
 	text-align: center;
+	vertical-align: bottom;
+	padding: 5px;
 
-	span { display: block; background: #fff;}
+	span { 
+		display: block;
+		padding: 3px;
+		background: #fff;
+	}
 }
 
 .right-box {
@@ -232,54 +287,16 @@ span.icon {
 	margin: 0 5px 0 0;
 	display: inline-block;
 }
-[data-page] {
-	@include transition(all .2s ease-in-out);
-	color: #cf0404;
-	display: inline-block;
-	height: 25px;
-	width: 25px;
-	border: 1px solid #ccc;
-	border-top-color: #d5d5d5;
-	border-bottom-color: #bbb;
-	border-right: none;
-	text-align: center;
-	line-height: 25px;
-	cursor: pointer;
-	background: rgb(255,255,255); /* Old browsers */
-	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(47%,rgba(246,246,246,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* IE10+ */
-	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(246,246,246,1) 47%,rgba(237,237,237,1) 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
-	@include box-shadow(inset 0px 1px 1px #fff, inset 0px -1px 1px #fff, inset 1px 0px 1px #fff, inset -1px 0px 1px #fff);
 
-	&:last-of-type {
-		border-right: 1px solid #ccc;
-	}
-	&:hover {
-		background: #eee;
-	}
-	&:active {
-		background: #e1e1e1;
-	}
-
-	&.selected { 
-		@include box-shadow(inset 0px 1px 1px rgba(255,255,255,.35),
-		 inset 0px -1px 1px rgba(255,255,255,.35),
-		  inset 1px 0px 1px rgba(255,255,255,.35),
-		   inset -1px 0px 1px rgba(255,255,255,.35));
-		background: #e1e1e1;
-	}
-}
-
+// =========== //
+// FULL DISPLAY //
+// =========== //
 .display-box {
 	display: block;
 	z-index: 11111;
-	position: fixed;
+	position: absolute;
 	left: 50%;
-	top: 20%;
+	top: 60px;
 	width: 920px;
 	margin-left: -460px;
 	background: #fff;
@@ -291,6 +308,12 @@ span.icon {
 		float: left;
 		line-height: 35px;
 
+ 	}
+
+ 	.user {
+ 		border: none;
+
+ 		img { max-width: 100%; }
  	}
 }
 
@@ -316,7 +339,7 @@ span.icon {
 		text-align: center;
 		width: 30px;
 		height: 30px;
-		margin: 5px 0 0 10px;
+		margin: 5px 0 0 4px;
 		background: rgb(255,255,255); /* Old browsers */
 		background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
 		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
@@ -358,7 +381,7 @@ span.icon {
 	}
 }
 
-.by-user {
+.by-user, .comment-control {
 	background: #eee;
 	display: block;
 	width: 100%;
@@ -366,8 +389,16 @@ span.icon {
 	margin-bottom: 7px;
 }
 
+.comment-control { 
+	cursor: pointer;
+	font-size: 1.2em;
+	padding: 6px 6px 6px 10px;
+	clear: both;
+}
+
 .labels { 
 	background: #fff;
 	padding: 3px 0 3px 6px;
+	@include border-radius(0 0 3px 3px);
 	color: #aaa;
 }

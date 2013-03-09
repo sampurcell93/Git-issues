@@ -92,14 +92,24 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   position: relative;
 }
 
+/* line 25, ../sass/screen.scss */
+#w80 {
+  width: 80%;
+}
+
 /* line 26, ../sass/screen.scss */
+#w20 {
+  width: 19%;
+}
+
+/* line 28, ../sass/screen.scss */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 30, ../sass/screen.scss */
+/* line 32, ../sass/screen.scss */
 body {
   background: url("../images/black_linen_v2.png");
   font-size: 14px;
@@ -110,11 +120,11 @@ body {
   position: relative;
   height: 100%;
 }
-/* line 40, ../sass/screen.scss */
+/* line 42, ../sass/screen.scss */
 body.active-issue::before {
   display: block;
 }
-/* line 42, ../sass/screen.scss */
+/* line 44, ../sass/screen.scss */
 body:before {
   width: 100%;
   height: 100%;
@@ -127,7 +137,7 @@ body:before {
   left: 0;
 }
 
-/* line 54, ../sass/screen.scss */
+/* line 56, ../sass/screen.scss */
 h1 {
   font-size: 4em;
   margin: 0 auto -7px;
@@ -136,7 +146,7 @@ h1 {
   text-align: left;
 }
 
-/* line 61, ../sass/screen.scss */
+/* line 63, ../sass/screen.scss */
 h2 {
   padding: 6px 10px;
   font-size: 1.4em;
@@ -144,24 +154,93 @@ h2 {
   margin-left: -3px;
 }
 
-/* line 67, ../sass/screen.scss */
+/* line 69, ../sass/screen.scss */
 a, .more, .title {
   cursor: pointer;
   color: #0084C1;
 }
-/* line 70, ../sass/screen.scss */
+/* line 72, ../sass/screen.scss */
 a:hover, .more:hover, .title:hover {
   color: #0099DB;
   text-decoration: underline;
 }
 
-/* line 76, ../sass/screen.scss */
+/* line 78, ../sass/screen.scss */
+.wrap {
+  margin: 0 auto;
+  width: 960px;
+  border: 1px solid #ddd;
+  -webkit-box-shadow: inset 0px 0px 2px 1px white, 0px 2px 7px #313131;
+  -moz-box-shadow: inset 0px 0px 2px 1px white, 0px 2px 7px #313131;
+  box-shadow: inset 0px 0px 2px 1px white, 0px 2px 7px #313131;
+  background: #f1f1f1;
+  display: block;
+}
+
+/* line 90, ../sass/screen.scss */
+[data-page] {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  color: #cf0404;
+  display: inline-block;
+  height: 25px;
+  width: 25px;
+  border: 1px solid #ccc;
+  border-top-color: #d5d5d5;
+  border-bottom-color: #bbb;
+  border-right: none;
+  text-align: center;
+  line-height: 25px;
+  cursor: pointer;
+  background: white;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(47%, #f6f6f6), color-stop(100%, #ededed));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
+  /* IE6-9 */
+  -webkit-box-shadow: inset 0px 1px 1px white, inset 0px -1px 1px white, inset 1px 0px 1px white, inset -1px 0px 1px white;
+  -moz-box-shadow: inset 0px 1px 1px white, inset 0px -1px 1px white, inset 1px 0px 1px white, inset -1px 0px 1px white;
+  box-shadow: inset 0px 1px 1px white, inset 0px -1px 1px white, inset 1px 0px 1px white, inset -1px 0px 1px white;
+}
+/* line 113, ../sass/screen.scss */
+[data-page]:last-of-type {
+  border-right: 1px solid #ccc;
+}
+/* line 116, ../sass/screen.scss */
+[data-page]:hover {
+  background: #eee;
+}
+/* line 119, ../sass/screen.scss */
+[data-page]:active {
+  background: #e1e1e1;
+}
+/* line 123, ../sass/screen.scss */
+[data-page].selected {
+  -webkit-box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.35), inset 0px -1px 1px rgba(255, 255, 255, 0.35), inset 1px 0px 1px rgba(255, 255, 255, 0.35), inset -1px 0px 1px rgba(255, 255, 255, 0.35);
+  -moz-box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.35), inset 0px -1px 1px rgba(255, 255, 255, 0.35), inset 1px 0px 1px rgba(255, 255, 255, 0.35), inset -1px 0px 1px rgba(255, 255, 255, 0.35);
+  box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.35), inset 0px -1px 1px rgba(255, 255, 255, 0.35), inset 1px 0px 1px rgba(255, 255, 255, 0.35), inset -1px 0px 1px rgba(255, 255, 255, 0.35);
+  background: #e1e1e1;
+}
+
+/* line 132, ../sass/screen.scss */
 .title {
   position: relative;
   border-left: 4px solid #009CE5;
   padding-left: 38px;
 }
-/* line 80, ../sass/screen.scss */
+/* line 136, ../sass/screen.scss */
 .title:after {
   font-size: .84em;
   font-family: 'icons';
@@ -198,30 +277,18 @@ a:hover, .more:hover, .title:hover {
   border: 1px solid #ccc;
   padding: 4px;
 }
-/* line 103, ../sass/screen.scss */
+/* line 159, ../sass/screen.scss */
 .title:hover::after {
   display: block;
 }
 
-/* line 105, ../sass/screen.scss */
-.wrap {
-  margin: 0 auto;
-  width: 960px;
-  border: 1px solid #ddd;
-  -webkit-box-shadow: inset 0px 0px 2px 1px white, 0px 2px 7px #313131;
-  -moz-box-shadow: inset 0px 0px 2px 1px white, 0px 2px 7px #313131;
-  box-shadow: inset 0px 0px 2px 1px white, 0px 2px 7px #313131;
-  background: #f1f1f1;
-  display: block;
-}
-
-/* line 113, ../sass/screen.scss */
+/* line 162, ../sass/screen.scss */
 .issue-list {
   position: relative;
   margin-top: 50px;
   margin-bottom: 50px;
 }
-/* line 117, ../sass/screen.scss */
+/* line 166, ../sass/screen.scss */
 .issue-list li {
   display: block;
   border: 1px solid #ccc;
@@ -229,13 +296,13 @@ a:hover, .more:hover, .title:hover {
   position: relative;
   width: 100%;
 }
-/* line 124, ../sass/screen.scss */
+/* line 173, ../sass/screen.scss */
 .issue-list li img {
   margin: 15px 5px 5px 5px;
   max-width: 80px;
   max-height: 80px;
 }
-/* line 130, ../sass/screen.scss */
+/* line 179, ../sass/screen.scss */
 .issue-list li:before {
   position: absolute;
   content: "issue #" attr(data-id);
@@ -256,11 +323,11 @@ a:hover, .more:hover, .title:hover {
   box-shadow: 0px 1px 2px #cccccc;
   color: #cf0404;
 }
-/* line 144, ../sass/screen.scss */
+/* line 193, ../sass/screen.scss */
 .issue-list li:hover {
   background: #f6f6f6;
 }
-/* line 147, ../sass/screen.scss */
+/* line 196, ../sass/screen.scss */
 .issue-list li.controls {
   color: red;
   position: absolute;
@@ -269,20 +336,20 @@ a:hover, .more:hover, .title:hover {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 153, ../sass/screen.scss */
+/* line 202, ../sass/screen.scss */
 .issue-list li.controls::before {
   display: none;
 }
-/* line 154, ../sass/screen.scss */
+/* line 203, ../sass/screen.scss */
 .issue-list li.controls#top {
   top: -45px;
 }
-/* line 155, ../sass/screen.scss */
+/* line 204, ../sass/screen.scss */
 .issue-list li.controls#bottom {
   bottom: -45px;
 }
 
-/* line 160, ../sass/screen.scss */
+/* line 209, ../sass/screen.scss */
 .user {
   display: block;
   float: left;
@@ -290,14 +357,17 @@ a:hover, .more:hover, .title:hover {
   border-right: 1px solid #ccc;
   min-height: 120px;
   text-align: center;
+  vertical-align: bottom;
+  padding: 5px;
 }
-/* line 168, ../sass/screen.scss */
+/* line 219, ../sass/screen.scss */
 .user span {
   display: block;
+  padding: 3px;
   background: #fff;
 }
 
-/* line 171, ../sass/screen.scss */
+/* line 226, ../sass/screen.scss */
 .right-box {
   width: 830px;
   height: 100%;
@@ -306,7 +376,7 @@ a:hover, .more:hover, .title:hover {
   min-height: 120px;
 }
 
-/* line 179, ../sass/screen.scss */
+/* line 234, ../sass/screen.scss */
 .body {
   width: 96%;
   display: block;
@@ -327,7 +397,7 @@ a:hover, .more:hover, .title:hover {
   line-height: 1.36em;
 }
 
-/* line 193, ../sass/screen.scss */
+/* line 248, ../sass/screen.scss */
 button {
   vertical-align: 0px;
   display: inline-block;
@@ -366,94 +436,37 @@ button {
   font-weight: 300;
   cursor: pointer;
 }
-/* line 217, ../sass/screen.scss */
+/* line 272, ../sass/screen.scss */
 button:hover {
   color: #fff;
   background: #cf0404;
 }
-/* line 221, ../sass/screen.scss */
+/* line 276, ../sass/screen.scss */
 button:active {
   background: #AA0303;
   -webkit-box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.3);
 }
-/* line 226, ../sass/screen.scss */
+/* line 281, ../sass/screen.scss */
 button span.icon {
   font-size: .9em;
 }
 
-/* line 230, ../sass/screen.scss */
+/* line 285, ../sass/screen.scss */
 span.icon {
   font-family: 'icons';
   margin: 0 5px 0 0;
   display: inline-block;
 }
 
-/* line 235, ../sass/screen.scss */
-[data-page] {
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-  color: #cf0404;
-  display: inline-block;
-  height: 25px;
-  width: 25px;
-  border: 1px solid #ccc;
-  border-top-color: #d5d5d5;
-  border-bottom-color: #bbb;
-  border-right: none;
-  text-align: center;
-  line-height: 25px;
-  cursor: pointer;
-  background: white;
-  /* Old browsers */
-  background: -moz-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
-  /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(47%, #f6f6f6), color-stop(100%, #ededed));
-  /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
-  /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
-  /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, white 0%, #f6f6f6 47%, #ededed 100%);
-  /* IE10+ */
-  background: linear-gradient(to bottom, #ffffff 0%, #f6f6f6 47%, #ededed 100%);
-  /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
-  /* IE6-9 */
-  -webkit-box-shadow: inset 0px 1px 1px white, inset 0px -1px 1px white, inset 1px 0px 1px white, inset -1px 0px 1px white;
-  -moz-box-shadow: inset 0px 1px 1px white, inset 0px -1px 1px white, inset 1px 0px 1px white, inset -1px 0px 1px white;
-  box-shadow: inset 0px 1px 1px white, inset 0px -1px 1px white, inset 1px 0px 1px white, inset -1px 0px 1px white;
-}
-/* line 258, ../sass/screen.scss */
-[data-page]:last-of-type {
-  border-right: 1px solid #ccc;
-}
-/* line 261, ../sass/screen.scss */
-[data-page]:hover {
-  background: #eee;
-}
-/* line 264, ../sass/screen.scss */
-[data-page]:active {
-  background: #e1e1e1;
-}
-/* line 268, ../sass/screen.scss */
-[data-page].selected {
-  -webkit-box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.35), inset 0px -1px 1px rgba(255, 255, 255, 0.35), inset 1px 0px 1px rgba(255, 255, 255, 0.35), inset -1px 0px 1px rgba(255, 255, 255, 0.35);
-  -moz-box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.35), inset 0px -1px 1px rgba(255, 255, 255, 0.35), inset 1px 0px 1px rgba(255, 255, 255, 0.35), inset -1px 0px 1px rgba(255, 255, 255, 0.35);
-  box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.35), inset 0px -1px 1px rgba(255, 255, 255, 0.35), inset 1px 0px 1px rgba(255, 255, 255, 0.35), inset -1px 0px 1px rgba(255, 255, 255, 0.35);
-  background: #e1e1e1;
-}
-
-/* line 277, ../sass/screen.scss */
+/* line 294, ../sass/screen.scss */
 .display-box {
   display: block;
   z-index: 11111;
-  position: fixed;
+  position: absolute;
   left: 50%;
-  top: 20%;
+  top: 60px;
   width: 920px;
   margin-left: -460px;
   background: #fff;
@@ -467,13 +480,21 @@ span.icon {
   -moz-box-shadow: 0px 0px 8px #111111;
   box-shadow: 0px 0px 8px #111111;
 }
-/* line 290, ../sass/screen.scss */
+/* line 307, ../sass/screen.scss */
 .display-box h2 {
   float: left;
   line-height: 35px;
 }
+/* line 313, ../sass/screen.scss */
+.display-box .user {
+  border: none;
+}
+/* line 316, ../sass/screen.scss */
+.display-box .user img {
+  max-width: 100%;
+}
 
-/* line 297, ../sass/screen.scss */
+/* line 320, ../sass/screen.scss */
 #top-info {
   overflow: hidden;
   *zoom: 1;
@@ -505,14 +526,14 @@ span.icon {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );
   /* IE6-9 */
 }
-/* line 313, ../sass/screen.scss */
+/* line 336, ../sass/screen.scss */
 #top-info span.icon {
   position: relative;
   line-height: 28px;
   text-align: center;
   width: 30px;
   height: 30px;
-  margin: 5px 0 0 10px;
+  margin: 5px 0 0 4px;
   background: white;
   /* Old browsers */
   background: -moz-linear-gradient(top, white 0%, #e5e5e5 100%);
@@ -539,15 +560,15 @@ span.icon {
   box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.4), inset -1px -1px 0px 0px rgba(255, 255, 255, 0.4), 0px 1px 3px #cccccc;
   border: 1px solid #ccc;
 }
-/* line 332, ../sass/screen.scss */
+/* line 355, ../sass/screen.scss */
 #top-info span.icon:hover {
   color: #000;
 }
-/* line 333, ../sass/screen.scss */
+/* line 356, ../sass/screen.scss */
 #top-info span.icon:hover::before, #top-info span.icon:hover::after {
   display: block;
 }
-/* line 335, ../sass/screen.scss */
+/* line 358, ../sass/screen.scss */
 #top-info span.icon:after {
   position: absolute;
   content: attr(data-open);
@@ -566,7 +587,7 @@ span.icon {
   top: 0;
   line-height: 27px;
 }
-/* line 349, ../sass/screen.scss */
+/* line 372, ../sass/screen.scss */
 #top-info span.icon:before {
   position: absolute;
   content: "";
@@ -577,8 +598,8 @@ span.icon {
   border-right-color: rgba(0, 0, 0, 0.8);
 }
 
-/* line 361, ../sass/screen.scss */
-.by-user {
+/* line 384, ../sass/screen.scss */
+.by-user, .comment-control {
   background: #eee;
   display: block;
   width: 100%;
@@ -586,9 +607,22 @@ span.icon {
   margin-bottom: 7px;
 }
 
-/* line 369, ../sass/screen.scss */
+/* line 392, ../sass/screen.scss */
+.comment-control {
+  cursor: pointer;
+  font-size: 1.2em;
+  padding: 6px 6px 6px 10px;
+  clear: both;
+}
+
+/* line 399, ../sass/screen.scss */
 .labels {
   background: #fff;
   padding: 3px 0 3px 6px;
+  -webkit-border-radius: 0 0 3px 3px;
+  -moz-border-radius: 0 0 3px 3px;
+  -ms-border-radius: 0 0 3px 3px;
+  -o-border-radius: 0 0 3px 3px;
+  border-radius: 0 0 3px 3px;
   color: #aaa;
 }

@@ -16,7 +16,7 @@
       <script type='text/javascript'>
      
       		Issue = Backbone.Model.extend({
-      			url: "https://api.github.com/repos/rails/rails/issues/"
+      			url: "https://api.github.com/repos/rails/rails/issues/" + <?php echo $issue; ?>
       		});
 
       		var issue = new Issue();
