@@ -28,7 +28,7 @@ $(document).ready(function() {
 						if (text[i].charAt(j) == "," || text[i].charAt(j) == "." || 
 							text[i].charAt(j) == "!" || text[i].charAt(j) == "?" || 
 							text[i].charAt(j) == "\n"){
-								text[i] = text[i].slice(1,j);
+								text[i] = text[i].slice(0,j);
 								break;
 						}
 					}
@@ -65,7 +65,7 @@ $(document).ready(function() {
 				}
 				else
 					new IssueFull({model: this});
-				
+
 				starting = true;
 			}
 		}
