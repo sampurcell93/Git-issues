@@ -242,6 +242,7 @@ a:hover, .more:hover, .title:hover {
 }
 /* line 136, ../sass/screen.scss */
 .title:after {
+  text-decoration: none;
   font-size: .84em;
   font-family: 'icons';
   content: attr(data-icon);
@@ -277,18 +278,18 @@ a:hover, .more:hover, .title:hover {
   border: 1px solid #ccc;
   padding: 4px;
 }
-/* line 159, ../sass/screen.scss */
+/* line 160, ../sass/screen.scss */
 .title:hover::after {
   display: block;
 }
 
-/* line 162, ../sass/screen.scss */
+/* line 163, ../sass/screen.scss */
 .issue-list {
   position: relative;
   margin-top: 50px;
   margin-bottom: 50px;
 }
-/* line 166, ../sass/screen.scss */
+/* line 167, ../sass/screen.scss */
 .issue-list li {
   display: block;
   border: 1px solid #ccc;
@@ -296,13 +297,13 @@ a:hover, .more:hover, .title:hover {
   position: relative;
   width: 100%;
 }
-/* line 173, ../sass/screen.scss */
+/* line 174, ../sass/screen.scss */
 .issue-list li img {
   margin: 15px 5px 5px 5px;
   max-width: 80px;
   max-height: 80px;
 }
-/* line 179, ../sass/screen.scss */
+/* line 180, ../sass/screen.scss */
 .issue-list li:before {
   position: absolute;
   content: "issue #" attr(data-id);
@@ -323,11 +324,11 @@ a:hover, .more:hover, .title:hover {
   box-shadow: 0px 1px 2px #cccccc;
   color: #cf0404;
 }
-/* line 193, ../sass/screen.scss */
+/* line 194, ../sass/screen.scss */
 .issue-list li:hover {
   background: #f6f6f6;
 }
-/* line 196, ../sass/screen.scss */
+/* line 197, ../sass/screen.scss */
 .issue-list li.controls {
   color: red;
   position: absolute;
@@ -336,20 +337,20 @@ a:hover, .more:hover, .title:hover {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 202, ../sass/screen.scss */
+/* line 203, ../sass/screen.scss */
 .issue-list li.controls::before {
   display: none;
 }
-/* line 203, ../sass/screen.scss */
+/* line 204, ../sass/screen.scss */
 .issue-list li.controls#top {
   top: -45px;
 }
-/* line 204, ../sass/screen.scss */
+/* line 205, ../sass/screen.scss */
 .issue-list li.controls#bottom {
   bottom: -45px;
 }
 
-/* line 209, ../sass/screen.scss */
+/* line 210, ../sass/screen.scss */
 .user {
   display: block;
   float: left;
@@ -360,14 +361,14 @@ a:hover, .more:hover, .title:hover {
   vertical-align: bottom;
   padding: 5px;
 }
-/* line 219, ../sass/screen.scss */
+/* line 220, ../sass/screen.scss */
 .user span {
   display: block;
   padding: 3px;
   background: #fff;
 }
 
-/* line 226, ../sass/screen.scss */
+/* line 227, ../sass/screen.scss */
 .right-box {
   width: 830px;
   height: 100%;
@@ -376,7 +377,7 @@ a:hover, .more:hover, .title:hover {
   min-height: 120px;
 }
 
-/* line 234, ../sass/screen.scss */
+/* line 235, ../sass/screen.scss */
 .body {
   width: 96%;
   display: block;
@@ -397,7 +398,7 @@ a:hover, .more:hover, .title:hover {
   line-height: 1.36em;
 }
 
-/* line 248, ../sass/screen.scss */
+/* line 249, ../sass/screen.scss */
 button {
   vertical-align: 0px;
   display: inline-block;
@@ -436,31 +437,31 @@ button {
   font-weight: 300;
   cursor: pointer;
 }
-/* line 272, ../sass/screen.scss */
+/* line 273, ../sass/screen.scss */
 button:hover {
   color: #fff;
   background: #cf0404;
 }
-/* line 276, ../sass/screen.scss */
+/* line 277, ../sass/screen.scss */
 button:active {
   background: #AA0303;
   -webkit-box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.3);
   box-shadow: inset 0px 2px 3px rgba(0, 0, 0, 0.3);
 }
-/* line 281, ../sass/screen.scss */
+/* line 282, ../sass/screen.scss */
 button span.icon {
   font-size: .9em;
 }
 
-/* line 285, ../sass/screen.scss */
+/* line 286, ../sass/screen.scss */
 span.icon {
   font-family: 'icons';
   margin: 0 5px 0 0;
   display: inline-block;
 }
 
-/* line 294, ../sass/screen.scss */
+/* line 295, ../sass/screen.scss */
 .display-box {
   display: block;
   z-index: 11111;
@@ -480,21 +481,21 @@ span.icon {
   -moz-box-shadow: 0px 0px 8px #111111;
   box-shadow: 0px 0px 8px #111111;
 }
-/* line 307, ../sass/screen.scss */
+/* line 308, ../sass/screen.scss */
 .display-box h2 {
   float: left;
   line-height: 35px;
 }
-/* line 313, ../sass/screen.scss */
+/* line 314, ../sass/screen.scss */
 .display-box .user {
   border: none;
 }
-/* line 316, ../sass/screen.scss */
+/* line 317, ../sass/screen.scss */
 .display-box .user img {
   max-width: 100%;
 }
 
-/* line 320, ../sass/screen.scss */
+/* line 321, ../sass/screen.scss */
 #top-info {
   overflow: hidden;
   *zoom: 1;
@@ -526,7 +527,7 @@ span.icon {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );
   /* IE6-9 */
 }
-/* line 336, ../sass/screen.scss */
+/* line 337, ../sass/screen.scss */
 #top-info span.icon {
   position: relative;
   line-height: 28px;
@@ -560,15 +561,15 @@ span.icon {
   box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.4), inset -1px -1px 0px 0px rgba(255, 255, 255, 0.4), 0px 1px 3px #cccccc;
   border: 1px solid #ccc;
 }
-/* line 355, ../sass/screen.scss */
+/* line 356, ../sass/screen.scss */
 #top-info span.icon:hover {
   color: #000;
 }
-/* line 356, ../sass/screen.scss */
+/* line 357, ../sass/screen.scss */
 #top-info span.icon:hover::before, #top-info span.icon:hover::after {
   display: block;
 }
-/* line 358, ../sass/screen.scss */
+/* line 359, ../sass/screen.scss */
 #top-info span.icon:after {
   position: absolute;
   content: attr(data-open);
@@ -587,7 +588,7 @@ span.icon {
   top: 0;
   line-height: 27px;
 }
-/* line 372, ../sass/screen.scss */
+/* line 373, ../sass/screen.scss */
 #top-info span.icon:before {
   position: absolute;
   content: "";
@@ -598,7 +599,7 @@ span.icon {
   border-right-color: rgba(0, 0, 0, 0.8);
 }
 
-/* line 384, ../sass/screen.scss */
+/* line 385, ../sass/screen.scss */
 .by-user, .comment-control {
   background: #eee;
   display: block;
@@ -607,7 +608,7 @@ span.icon {
   margin-bottom: 7px;
 }
 
-/* line 392, ../sass/screen.scss */
+/* line 393, ../sass/screen.scss */
 .comment-control {
   cursor: pointer;
   font-size: 1.2em;
@@ -615,7 +616,7 @@ span.icon {
   clear: both;
 }
 
-/* line 399, ../sass/screen.scss */
+/* line 400, ../sass/screen.scss */
 .labels {
   background: #fff;
   padding: 3px 0 3px 6px;

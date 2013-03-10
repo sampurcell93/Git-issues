@@ -34,6 +34,59 @@ $(document).ready(function() {
 				}
 			}
 			return text.join(" ");
+		},
+		formatDate: function(date) {
+			date = date.split("-");
+			var day, month, year, hour, minute;
+			year = date[0];
+			month = toMonth(date[1]);
+			day = date[2].substring(0,2);
+			var time = date[2];
+			time = time.split(":");
+			hour = parseInt(time[0]);
+			minute = time[1];
+
+			function toMonth(month) {
+				switch(month){
+					case '01':
+					return "January";
+					break;
+					case '02':
+					return "February";
+					break;
+					case '03':
+					return "March";
+					break;
+					case '04':
+					return "April";
+					break;
+					case '05':
+					return "May";
+					break;
+					case '06':
+					return "June";
+					break;
+					case '07':
+					return "July";
+					break;
+					case '08':
+					return "August";
+					break;
+					case '09':
+					return "September";
+					break;
+					case '10':
+					return "October";
+					break;
+					case '11':
+					return "November";
+					break;
+					case '12':
+					return "December";
+					break;
+				}
+			}
+			return month + " " + day + ", " + year + " at " + hour % 12 + ":" + minute;
 		}
 	}
 
@@ -90,7 +143,7 @@ $(document).ready(function() {
 			var data = {
 				name: user.login,
 				html_url: user.html_url,
-				timestamp: comment.created_at,
+				timestamp: parse.formatDate(comment.created_at),
 				body: parse.linkUsers(comment.body)
 			};
 			if ($(that.parent).find(".labels").length != 0){
@@ -141,7 +194,7 @@ $(document).ready(function() {
 				stateIcon: stateIcon,
 				state: issue.get("state"),
 				name: user.login,
-				timestamp: issue.get("created_at"),
+				timestamp: parse.formatDate(issue.get("created_at")),
 				commentNum:  issue.get("comments"),
 			}
 

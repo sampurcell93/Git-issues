@@ -32,7 +32,7 @@
 						<span><%= username %></span>
 					</a>
 						<span><%= commentNum %> comments</span>
-						<span>Created at <%= timestamp %></span>
+						<span>Created on <%= timestamp %></span>
 
 				</div>
 				<span class='comment-control'>Hide all <span class='num-comments'><%= commentNum %></span> Comments</span>
@@ -40,7 +40,7 @@
 			</script>
 			<script type="text/template" id='single-comment'>
 				<p class='body'>
-					<span class='by-user'>By <a href='<%= html_url %>'><%= name %></a> at <%= timestamp %> <br /></span>
+					<span class='by-user'>By <a href='<%= html_url %>'><%= name %></a> on <%= timestamp %> <br /></span>
 					<%= body %>
 				</p>
 

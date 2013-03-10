@@ -134,6 +134,7 @@ a, .more, .title {
 	border-left: 4px solid #009CE5;
 	padding-left: 38px;
 	&:after {
+		text-decoration: none;
 		font-size: .84em;
 		font-family: 'icons';
 		content: attr(data-icon);
