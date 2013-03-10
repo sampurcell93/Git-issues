@@ -158,7 +158,8 @@ $(document).ready(function() {
 		events: {
 			"click .close": function() {
 				this.remove();
-				$("body").removeClass("active-issue")
+				$("body").removeClass("active-issue");
+				window.location.hash = "";
 			},
 			'click .comment-control': function(e) {
 				if (!$(e.currentTarget).hasClass("hiding"))
