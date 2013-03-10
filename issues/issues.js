@@ -18,7 +18,9 @@ $(document).ready(function() {
 		/* Admittedly flawed, because it doesn't check for validity... AJAX calls take too long */
 		linkUsers: function(text) {
 			text = text.split(" ");
+			var word;
 			for (var i = 0; i < text.length; i++) {
+				word = text[i];
 				if (text[i].charAt(0) != "@")
 					continue;
 				else {
@@ -30,7 +32,7 @@ $(document).ready(function() {
 								break;
 						}
 					}
-					text[i] = "<a href='http://github.com/" + text[i].substring(1,text[i].length) + "'>" + text[i] + "</a>";
+					text[i] = "<a href='http://github.com/" + text[i].substring(1,text[i].length) + "'>" + word + "</a>";
 				}
 			}
 			return text.join(" ");
@@ -110,7 +112,6 @@ $(document).ready(function() {
 		template: $("#issue-full").html(),
 		tagName: 'div',
 		initialize: function() {
-			 $("html, body").animate({ scrollTop: 0 }, "slow");
 			_.bindAll(this,"render");
 			window.location.hash = this.model.get("number");
 			this.render();	
@@ -157,8 +158,7 @@ $(document).ready(function() {
 		events: {
 			"click .close": function() {
 				this.remove();
-				$("body").removeClass("active-issue");
-				window.location.hash = "";
+				$("body").removeClass("active-issue")
 			},
 			'click .comment-control': function(e) {
 				if (!$(e.currentTarget).hasClass("hiding"))
