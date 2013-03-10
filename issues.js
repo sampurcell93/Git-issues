@@ -223,12 +223,10 @@ $(document).ready(function() {
 			'click #next-id': function() {
 				var hash = window.location.hash;
 				window.location.hash = parseInt(hash.substring(1,hash.length)) + 1;
-				console.log(hash.substring(1,hash.length));
 			},
 			'click #prev-id': function() {
 				var hash = window.location.hash;
 				window.location.hash = parseInt(hash.substring(1,hash.length)) - 1;
-				console.log(hash.substring(1,hash.length));
 			}
 		},
 		/* pull comments from the github comments api */
