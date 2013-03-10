@@ -16,7 +16,10 @@
 	<body>
 		<h1><span class='icon'>&#xe002;</span>Issues</h1>
 		<div class='wrap'>
+			<!-- template for the full view -->
 			<script type='text/template' id='issue-full'>
+				<button id = 'next-id' class='icon'>&#xe009;</button>
+				<button id = 'prev-id' class='icon'>&#xe00b;</button>
 				<div id='top-info'>
 					<span data-open='<%= state %>' class='fl icon'><%= stateIcon %></span>
 					<h2><%= title %></h2>
@@ -38,6 +41,7 @@
 				<span class='comment-control'>Hide all <span class='num-comments'><%= commentNum %></span> Comments</span>
 				<%= labels %>
 			</script>
+			<!-- template for a single comment  -->
 			<script type="text/template" id='single-comment'>
 				<p class='body'>
 					<span class='by-user'>By <a href='<%= html_url %>'><%= name %></a> on <%= timestamp %> <br /></span>
@@ -54,6 +58,7 @@
 					<button class='prev'></button>
 					<button class='next'></button>
 				</li>
+				<!-- template for a single issue in the list  -->
 				<script type='text/template' id='issue-item'>
 						<a class='user' href='<%= user_url %>'>
 							<img src='<%= avatar %>' />

@@ -219,6 +219,16 @@ $(document).ready(function() {
 				else 
 					$(e.currentTarget).text("Hide all " + this.model.get("comments") + " comments").removeClass("hiding");
 				$(".comment-body").slideToggle(200);
+			},
+			'click #next-id': function() {
+				var hash = window.location.hash;
+				window.location.hash = parseInt(hash.substring(1,hash.length)) + 1;
+				console.log(hash.substring(1,hash.length));
+			},
+			'click #prev-id': function() {
+				var hash = window.location.hash;
+				window.location.hash = parseInt(hash.substring(1,hash.length)) - 1;
+				console.log(hash.substring(1,hash.length));
 			}
 		},
 		/* pull comments from the github comments api */

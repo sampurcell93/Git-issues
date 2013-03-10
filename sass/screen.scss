@@ -266,7 +266,6 @@ button {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff3019', endColorstr='#cf0404',GradientType=0 ); /* IE6-9 */
 	color: #f9f9f9;
 	text-shadow: 1px 1px 2px rgba(0,0,0,.7);
-	font-family: sans-serif;
 	font-weight: 300;
 	cursor: pointer;
 
@@ -283,7 +282,7 @@ button {
 		font-size: .9em;
 	}
 }
-span.icon { 
+.icon { 
 	font-family: 'icons'; 
 	margin: 0 5px 0 0;
 	display: inline-block;
@@ -316,6 +315,37 @@ span.icon {
 
  		img { max-width: 100%; }
  	}
+}
+
+#next-id, #prev-id {
+	position: absolute;
+	top: 100px;
+	@include box-shadow(0px 1px 4px #444);
+	@include opacity(.6);
+	border: none;
+
+	&:hover {
+		background: rgb(255,48,25); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(255,48,25,1) 0%, rgba(207,4,4,1) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,48,25,1)), color-stop(100%,rgba(207,4,4,1))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(255,48,25,1) 0%,rgba(207,4,4,1) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(255,48,25,1) 0%,rgba(207,4,4,1) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(255,48,25,1) 0%,rgba(207,4,4,1) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(255,48,25,1) 0%,rgba(207,4,4,1) 100%); /* W3C */
+		@include opacity(1);
+	}
+	&:active {
+		background: #AA0303;
+		@include box-shadow(inset 0px 2px 3px rgba(0,0,0,.3));
+	}
+}
+
+#prev-id {
+	left: -30px;
+}
+
+#next-id {
+	right: -30px;
 }
 
 #top-info {
