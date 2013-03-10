@@ -203,7 +203,7 @@ $(document).ready(function() {
 				prepend(_.template(this.template, item)).
 				appendTo(document.body);
 			/* for recent-first */
-			for (var i = comments.length - 1; i >= 0; i--)
+			for (var i in comments)
 				new Comment({model: comments[i], parent: that.el});
 			return this;
 		},
@@ -388,6 +388,7 @@ $(document).ready(function() {
 	});
 	/* when the hash changes, load a new full view based on id */
 	$(window).on("hashchange", function(){ 
+		/* first check to see if the requested id is in the collection */
 		for (var i = 0; i < issuesCollection.length; i++){
 			if (window.location.hash == "#" + issuesCollection.at(i).get("number") && !$("body").hasClass("active")){
 				$(".display-box").remove();
@@ -395,6 +396,7 @@ $(document).ready(function() {
 				return;
 			}
 		}
+		/* if not, pull from the server */
 		new Issue({
 			number: window.location.hash.substring(1,window.location.hash.length), 
 			external: 1
@@ -405,14 +407,15 @@ $(document).ready(function() {
     if (e.keyCode == 37) { 
     	/* if a full view is up, disable keys */
     	if ($("body").hasClass("active-issue"))
-			return false;
-       issueList.prevPage();
-       return false;
+			$("#prev-id").trigger("click");
+		else issueList.prevPage();
+        return false;
     }
     else if (e.keyCode == 39) { 
-    	if ($("body").hasClass("active-issue"))
-			return false;
-        issueList.nextPage();
+    	if ($("body").hasClass("active-issue")){
+			$("#next-id").trigger("click");
+		}
+        else issueList.nextPage();
     	return false;
     }
 });
