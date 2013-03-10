@@ -64,7 +64,7 @@
 							<img src='<%= avatar %>' />
 						<span><%= username %></span></a>
 					<div class='right-box rel'>
-						<h2 data-icon='&#xe014;' class='title'><%= title %></h2>
+						<h2 data-icon='&nbsp; &#xe014;' class='title'><%= title %></h2>
 						<p class='body'><%= truncated_body %></p>
 						<%= labels %>
 					</div>
