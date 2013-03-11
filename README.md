@@ -1,5 +1,8 @@
 Hey Crashlytics!
 
+Note: The app is not authenticated... so there are only 60 requests per hour. If it randomly stops working... that's the reason.
+
+Features:
 - The number of issues per page is modular, and will accept any input, defaulting to 25;
 - Individual issue viewer: I opted not to implement an entirely new page for the 
   individual viewer. Entering an issue's hash number will cause its full view to appear as a page overlay.
