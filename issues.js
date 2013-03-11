@@ -373,6 +373,7 @@ $(document).ready(function() {
 	});
 
 	var issuesCollection = new Issues();
+	var cache = new Issues();
 	/* on page load, fetch all issues */
 	issuesCollection.fetch({
 		success: function() {
@@ -388,7 +389,7 @@ $(document).ready(function() {
 	});
 	/* when the hash changes, load a new full view based on id */
 	$(window).on("hashchange", function(){ 
-		/* first check to see if the requested id is in the collection */
+		/* first check to see if the requested id is in the collection of 30 */
 		for (var i = 0; i < issuesCollection.length; i++){
 			if (window.location.hash == "#" + issuesCollection.at(i).get("number") && !$("body").hasClass("active")){
 				$(".display-box").remove();
@@ -396,11 +397,22 @@ $(document).ready(function() {
 				return;
 			}
 		}
-		/* if not, pull from the server */
-		new Issue({
+		/* then, check to see if it's in the cache collection; that is, issues fetched after pageload. */
+		for (var j = 0; j < cache.length; j++){
+			if (window.location.hash == "#" + cache.at(j).get("number") && !$("body").hasClass("active")){
+				$(".display-box").remove();
+				new IssueFull({model: cache.at(j)});
+				return;
+			}
+		}
+
+		/* if not, pull from the server and add to cache*/
+		var iss = new Issue({
 			number: window.location.hash.substring(1,window.location.hash.length), 
 			external: 1
 		});
+		cache.add(iss);
+
 	});
 }).keydown(function(e){
 	/* left right navigation */
