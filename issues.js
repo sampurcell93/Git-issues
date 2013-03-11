@@ -1,5 +1,6 @@
 $(document).ready(function() {
 	var starting = false;
+	hash = window.location.hash;
 	/* module for linking users to their github accounts and formatting label objects */
 	var parse = {
 		formatLabel: function(array) { 
@@ -47,49 +48,12 @@ $(document).ready(function() {
 			minute = time[1];
 
 			function toMonth(month) {
-				switch(month){
-					case '01':
-					return "January";
-					break;
-					case '02':
-					return "February";
-					break;
-					case '03':
-					return "March";
-					break;
-					case '04':
-					return "April";
-					break;
-					case '05':
-					return "May";
-					break;
-					case '06':
-					return "June";
-					break;
-					case '07':
-					return "July";
-					break;
-					case '08':
-					return "August";
-					break;
-					case '09':
-					return "September";
-					break;
-					case '10':
-					return "October";
-					break;
-					case '11':
-					return "November";
-					break;
-					case '12':
-					return "December";
-					break;
-				}
+				var months = ["Jan", "Feb", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+				return months[parseInt(month) - 1];
 			}
 			return month + " " + day + ", " + year + " at " + hour % 12 + ":" + minute;
 		}
 	}
-
 
 	Issue = Backbone.Model.extend({
 		url: 'https://api.github.com/repos/rails/rails/issues/',
@@ -106,7 +70,9 @@ $(document).ready(function() {
 								new IssueFull({model: that});
 							},
 							error: function(){
+								window.location.hash = hash;
 								alert("Bad Issue Id");
+								that.destroy();
 							}
 						});
 					}
@@ -221,11 +187,11 @@ $(document).ready(function() {
 				$(".comment-body").slideToggle(200);
 			},
 			'click #next-id': function() {
-				var hash = window.location.hash;
+				hash = window.location.hash;
 				window.location.hash = parseInt(hash.substring(1,hash.length)) + 1;
 			},
 			'click #prev-id': function() {
-				var hash = window.location.hash;
+				hash = window.location.hash;
 				window.location.hash = parseInt(hash.substring(1,hash.length)) - 1;
 			}
 		},
@@ -289,7 +255,7 @@ $(document).ready(function() {
 		el: '.issue-list',
 		tagName: 'ul',
 		/* number of issues per page */
-		issueLimit: 25,
+		issueLimit: 10,
 		initialize: function() { 
 			_.bindAll(this,"render");
 			this.collection.bind("add",this.render);
@@ -312,6 +278,7 @@ $(document).ready(function() {
 				$el.prepend(new IssueItem({model: curr, collection: this}).render().el);
 				$el.find("li").first().hide().show(2);
 			}
+			this.disableControls();
 			return this;
 		},
     	events: {
@@ -369,6 +336,20 @@ $(document).ready(function() {
 			var $el = $(this.el);
 			$el.find(".next").html("Next " + this.issueLimit + " &nbsp;<span class='icon'>&#xe009;</span>");
 			$el.find(".prev").html("<span class='icon'>&#xe00b;</span>&nbsp;Prev " + this.issueLimit);
+	    },
+	    disableControls: function() {
+	    	var selected = $(".selected").data("page");
+			if (selected == this.numPages - 1  || this.numPages == 1){
+	    		$(".next").addClass("disabled");
+	    	}
+	    	if (!selected){
+	    		$(".prev").addClass("disabled");
+	    	}
+	    	if (selected && selected != this.numPages - 1 ) {
+	    		$(".prev").removeClass("disabled");
+	    		$(".next").removeClass("disabled");
+	    	}
+
 	    }
 	});
 
@@ -411,13 +392,13 @@ $(document).ready(function() {
 			number: window.location.hash.substring(1,window.location.hash.length), 
 			external: 1
 		});
-		cache.add(iss);
+		if (typeof iss !== "undefined")
+			cache.add(iss);
 
 	});
 }).keydown(function(e){
 	/* left right navigation */
     if (e.keyCode == 37) { 
-    	/* if a full view is up, disable keys */
     	if ($("body").hasClass("active-issue"))
 			$("#prev-id").trigger("click");
 		else issueList.prevPage();
