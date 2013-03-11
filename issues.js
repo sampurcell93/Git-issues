@@ -255,7 +255,7 @@ $(document).ready(function() {
 		el: '.issue-list',
 		tagName: 'ul',
 		/* number of issues per page */
-		issueLimit: 10,
+		issueLimit: 25,
 		initialize: function() { 
 			_.bindAll(this,"render");
 			this.collection.bind("add",this.render);
@@ -278,7 +278,6 @@ $(document).ready(function() {
 				$el.prepend(new IssueItem({model: curr, collection: this}).render().el);
 				$el.find("li").first().hide().show(2);
 			}
-			this.disableControls();
 			return this;
 		},
     	events: {
@@ -336,20 +335,6 @@ $(document).ready(function() {
 			var $el = $(this.el);
 			$el.find(".next").html("Next " + this.issueLimit + " &nbsp;<span class='icon'>&#xe009;</span>");
 			$el.find(".prev").html("<span class='icon'>&#xe00b;</span>&nbsp;Prev " + this.issueLimit);
-	    },
-	    disableControls: function() {
-	    	var selected = $(".selected").data("page");
-			if (selected == this.numPages - 1  || this.numPages == 1){
-	    		$(".next").addClass("disabled");
-	    	}
-	    	if (!selected){
-	    		$(".prev").addClass("disabled");
-	    	}
-	    	if (selected && selected != this.numPages - 1 ) {
-	    		$(".prev").removeClass("disabled");
-	    		$(".next").removeClass("disabled");
-	    	}
-
 	    }
 	});
 
